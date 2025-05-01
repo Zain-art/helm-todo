@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "go-todo-app.fullname" . }}
+  labels:
+    app: {{ include "go-todo-app.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "go-todo-app.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "go-todo-app.name" . }}
+    spec:
+      containers:
+        - name: go-todo-cont
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.containerPort}}
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.configMap.name }}
+                  key: DB_HOST
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.configMap.name }}
+                  key: DB_NAME
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.configMap.name }}
+                  key: DB_PORT
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.mysql.secret.name }}
+                  key: MYSQL_ROOT_PASSWORD

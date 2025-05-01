@@ -1,0 +1,61 @@
+replicaCount: 2
+
+image:
+  repository: zainmk280/go-todo
+  tag: v2
+  pullPolicy: IfNotPresent
+
+containerPort: 4000
+
+todoService:
+  name: todo-service
+  type: NodePort
+  port: 80
+  targetPort: 4000
+  nodePort: 30001
+
+mysqlService:
+  name: mysql-service
+  portName: mysql
+  port: 3306
+  targetPort: 3307
+
+env:
+  DB_HOST: "host.docker.internal"
+  DB_PORT: "3307"
+  DB_NAME: "gotodo"
+
+# secret:
+#   name: mysql-secret
+#   MYSQL_ROOT_PASSWORD: "root"
+
+configMap:
+  name: todo-config
+  DB_HOST: "host.docker.internal"
+  DB_NAME: "gotodo"
+  DB_PORT: "3307"
+  DB_USER: "root"
+
+mysql:
+  name: mysql-deployment
+  appLabel: mysql
+  replicas: 1
+  containerName: mysql
+  image:
+    repository: mysql
+    tag: 8.0.23
+  port: 3307
+  database: gotodo
+  secret:
+    name: mysql-secret
+    key: MYSQL_ROOT_PASSWORD
+  service:
+    name: mysql-service
+    portName: mysql
+    port: 3306
+    targetPort: 3307
+  pvc:
+    name: mysql-pvc
+    storageClassName: standard
+    accessMode: ReadWriteOnce
+    storage: 1Gi
