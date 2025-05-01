@@ -31,10 +31,10 @@ env:
 
 configMap:
   name: todo-config
-  DB_HOST: "host.docker.internal"
-  DB_NAME: "gotodo"
+  DB_HOST: host.docker.internal
+  DB_NAME: gotodo
   DB_PORT: "3307"
-  DB_USER: "root"
+  DB_USER: root
 
 mysql:
   name: mysql-deployment
