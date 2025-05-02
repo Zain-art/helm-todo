@@ -43,12 +43,13 @@ mysql:
   containerName: mysql
   image:
     repository: mysql
-    tag: v2.0.0
+    tag: 8.0.23
   port: 3307
   database: gotodo
   secret:
     name: mysql-secret
-    MYSQL_ROOT_PASSWORD: root
+    key: MYSQL_ROOT_PASSWORD
+    value: root
   service:
     name: mysql-service
     portName: mysql

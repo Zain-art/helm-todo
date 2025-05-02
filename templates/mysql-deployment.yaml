@@ -22,7 +22,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.mysql.secret.name }}
-                  key: {{ .Values.mysql.secret.MYSQL_ROOT_PASSWORD }}
+                  key: {{ .Values.mysql.secret.key }}
             - name: MYSQL_DATABASE
               value: "{{ .Values.mysql.database }}"
           ports:
