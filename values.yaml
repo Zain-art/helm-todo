@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: zainmk280/go-todo
-  tag: v2
+  tag: v2.0.0
   pullPolicy: IfNotPresent
 
 containerPort: 4000
@@ -43,7 +43,7 @@ mysql:
   containerName: mysql
   image:
     repository: mysql
-    tag: 8.0.23
+    tag: v2.0.0
   port: 3307
   database: gotodo
   secret:
