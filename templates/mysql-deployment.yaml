@@ -28,9 +28,9 @@ spec:
           ports:
             - containerPort: {{ .Values.mysql.port }}
           volumeMounts:
-            - name: mysql-persistent-storage
-              mountPath: /var/lib/mysql
+            - name: {{ .Values.mysql.volumeMount.name}}
+              mountPath: {{.Values.mysql.volumeMount.mountPath}}
       volumes:
-        - name: mysql-persistent-storage
+        - name: {{.Values.mysql.volumes.name}}
           persistentVolumeClaim:
-            claimName: {{ .Values.mysql.pvc }}
+            claimName: {{ .Values.mysql.pvc.name }}

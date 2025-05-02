@@ -59,3 +59,8 @@ mysql:
     storageClassName: standard
     accessMode: ReadWriteOnce
     storage: 1Gi
+  volumeMount:
+    name: mysql-persistent-storage
+    mountPath: /var/lib/mysql
+  volumes:
+    name: mysql-persistent-storage
