@@ -48,7 +48,7 @@ mysql:
   database: gotodo
   secret:
     name: mysql-secret
-    key: MYSQL_ROOT_PASSWORD
+    MYSQL_ROOT_PASSWORD: root
   service:
     name: mysql-service
     portName: mysql
