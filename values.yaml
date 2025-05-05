@@ -35,7 +35,7 @@ mysql:
   containerName: mysql
   image:
     repository: mysql
-    tag: v3.0.0
+    tag: 8.0.23
   port: 3307
   database: gotodo
   secret:
