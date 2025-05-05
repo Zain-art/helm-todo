@@ -47,3 +47,15 @@ sudo apt install -y kubectl
 # Install Helm
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 ```
+
+## Step 1: Clone the Repository
+```bash
+git clone https://github.com/Zain-art/go-todo-task1.git
+cd go-todo-task1
+```
+## Step 2: Build the Docker Image using Github Actions CI/CD Pipeline Workflows
+```bash
+- Go to [go-todo-taks1]  https://github.com/Zain-art/go-todo-task1/blob/main/.github/workflows/ci.yml
+```
+
+
