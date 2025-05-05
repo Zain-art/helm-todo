@@ -65,6 +65,11 @@ minikube start --driver=docker
 ```bash
 helm create go-todo-app
 ```
+## 🚢 Step 4: Install Helm Chart
+```bash
+helm install my-todo .
+```
+
 ### Check deployment:
 ```bash
 kubectl get all
@@ -82,5 +87,21 @@ helm upgrade my-todo
 ```bash
 helm uninstall my-todo 
 ```
+##  Integrating Argo CD with your Helm-deployed Go TODO application enables continuous delivery with GitOps
+### 🚀 GitOps with Argo CD 
+### 📦 Step 5: Install Argo CD on Kubernetes
+```bash
+# Create namespace
+kubectl create namespace argocd
+
+# Install Argo CD
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+##  Step 6: Access Argo CD UI
+```bash
+# Port-forward the Argo CD API server
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+## 🔐 Step 7: Login to Argo CD
 
 
