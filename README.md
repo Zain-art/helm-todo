@@ -46,3 +46,4 @@ sudo apt install -y kubectl
 
 # Install Helm
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+```
