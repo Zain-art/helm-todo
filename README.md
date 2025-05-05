@@ -78,7 +78,9 @@ kubectl port-forward service/todo-service 8000:80
 helm upgrade my-todo
 ```
 
-
-
+## Uninstall Helm Release
+```bash
+helm uninstall my-todo 
+```
 
 
