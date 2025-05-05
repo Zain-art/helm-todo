@@ -57,6 +57,10 @@ cd go-todo-task1
 
 - Go to [go-todo-taks1 and see CI/CD Github Actions Workflows](https://github.com/Zain-art/go-todo-task1/blob/main/.github/workflows/ci.yml)
 
+### Deploy with Helm on Minikube with docker driver
+```bash
+minikube start --driver=docker
+```
 ## Step 3: Create a New Helm Chart
 ```bash
 helm create go-todo-app
@@ -69,8 +73,10 @@ kubectl get all
 ```bash
 kubectl port-forward service/todo-service 8000:80
 ```
-
-
+##  Upgrade Helm Release
+```bash
+helm upgrade my-todo
+```
 
 
 
