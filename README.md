@@ -1,5 +1,5 @@
 # helm-todo
-# 🧰 Go TODO App with Helm Deployment
+# 🧰 Go TODO App with Helm Deployment and ArgoCD
 
 This project is a simple TODO CRUD application written in Golang, packaged and deployed using Helm. It includes a Kubernetes-ready Helm chart with templated **Deployment**, **Service**, and optional **ConfigMap**/**Secret**.
 
