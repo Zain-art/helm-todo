@@ -111,4 +111,28 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 * Username: admin
 * Password: (from above command)
 
+##  Create GitOps Repo in ArgoCD
+### Step 8: Connect Your Git Repository
+###  Create Argo CD Application via Web UI
+### 🔄 Step 9: Sync and Deploy
+### ✅ Step 10: Verify Deployment
+```bash
+kubectl get all
+```
+### 🌐 Step 11: Access the TODO Application via Port Forwarding
+* Find the service name:
+ ```bash
+kubectl get svc
+```
+### Port forward the service (replace todo-service with your actual service name if different):
+```bash
+kubectl port-forward svc/todo-service 4040:80
+```
+* Open your browser and visit:
+```bash
+http://localhost:4040
+```
+
+
+
 
