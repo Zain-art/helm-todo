@@ -55,7 +55,24 @@ cd go-todo-task1
 ```
 ## Step 2: Build the Docker Image using Github Actions CI/CD Pipeline Workflows
 
-- Go to [go-todo-taks1](https://github.com/Zain-art/go-todo-task1/blob/main/.github/workflows/ci.yml)
+- Go to [go-todo-taks1 and see CI/CD Github Actions Workflows](https://github.com/Zain-art/go-todo-task1/blob/main/.github/workflows/ci.yml)
+
+## Step 3: Create a New Helm Chart
+```bash
+helm create go-todo-app
+```
+### Check deployment:
+```bash
+kubectl get all
+```
+### Access the app:
+```bash
+kubectl port-forward service/todo-service 8000:80
+```
+
+
+
+
 
 
 
