@@ -1,41 +1,33 @@
 replicaCount: 2
-
 image:
   repository: zainmk280/go-todo
   tag: v3.0.0
   pullPolicy: IfNotPresent
-
 containerPort: 4000
-
 todoService:
   name: todo-service-helm
   type: NodePort
   port: 80
   targetPort: 4000
   nodePort: 30001
-
 mysqlService:
   name: mysql-service-helm
   portName: mysql
   port: 3306
   targetPort: 3307
-
 env:
   DB_HOST: "host.docker.internal"
   DB_PORT: "3307"
   DB_NAME: "gotodo"
-
 # secret:
 #   name: mysql-secret
 #   MYSQL_ROOT_PASSWORD: "root"
-
 configMap:
   name: todo-config-helm
   DB_HOST: host.docker.internal
   DB_NAME: gotodo
   DB_PORT: "3307"
   DB_USER: root
-
 mysql:
   name: mysql-deployment-helm
   appLabel: mysql
