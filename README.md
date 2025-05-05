@@ -124,9 +124,9 @@ kubectl get all
  ```bash
 kubectl get svc
 ```
-### Port forward the service (replace todo-service with your actual service name if different):
+### Port forward the service (replace todo-service-helm with your actual service name if different):
 ```bash
-kubectl port-forward svc/todo-service 4040:80
+kubectl port-forward svc/todo-service-helm 4040:80
 ```
 * Open your browser and visit:
 ```bash
